@@ -19,8 +19,8 @@ services:
       - "443:9443"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock"
-      - "${CONFIG}:/data"
-      - "${SSL}:/certs"
+      - "${PORTAINER_CONFIG}:/data"
+      - "${PORTAINER_SSL}:/certs"
     command: --ssl --sslcert /certs/portainer.crt --sslkey /certs/portainer.key
     depends_on:
       portainer-setup:
